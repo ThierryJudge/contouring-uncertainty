@@ -41,6 +41,6 @@ To train contouring models use
  python runner.py  data=camus-cont task=dsnt-skew
  ```
 
-## TMI 2025
+## Uncertainty propagation
 
 To run models with uncertainty propagation run scripts in /tmi_scripts. 
