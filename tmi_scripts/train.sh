@@ -9,12 +9,12 @@ device=0
  python runner.py predict=False seed=${SEED} data=${dataset}-cont ++comet_tags=[${dataset},TRAIN] ++trainer.devices=[${device}] task=dsnt-al task.model.drop_block=True
 
 # ############## DSNT-SKEW ################
+# !!!!!!!!!! Not included in paper  !!!!!!!!!!
+python runner.py predict=False seed=${SEED} data=${dataset}-cont ++comet_tags=[${dataset},TRAIN] ++trainer.devices=[${device}]  task=dsnt-skew5
+python runner.py predict=False seed=${SEED} data=${dataset}-cont ++comet_tags=[${dataset},TRAIN] ++trainer.devices=[${device}]  task=dsnt-skew9
 
-python runner.py predict=False seed=1 data=${dataset}-cont ++comet_tags=[${dataset},TRAIN] ++trainer.devices=[${device}]  task=dsnt-skew5
-python runner.py predict=False seed=1 data=${dataset}-cont ++comet_tags=[${dataset},TRAIN] ++trainer.devices=[${device}]  task=dsnt-skew9
-
-python runner.py predict=False seed=1 data=${dataset}-cont ++comet_tags=[${dataset},TRAIN] ++trainer.devices=[${device}]  task=dsnt-skew5 task.model.drop_block=True
-python runner.py predict=False seed=1 data=${dataset}-cont ++comet_tags=[${dataset},TRAIN] ++trainer.devices=[${device}]  task=dsnt-skew9 task.model.drop_block=True
+python runner.py predict=False seed=${SEED} data=${dataset}-cont ++comet_tags=[${dataset},TRAIN] ++trainer.devices=[${device}]  task=dsnt-skew5 task.model.drop_block=True
+python runner.py predict=False seed=${SEED} data=${dataset}-cont ++comet_tags=[${dataset},TRAIN] ++trainer.devices=[${device}]  task=dsnt-skew9 task.model.drop_block=True
 
 ############## SSN ################
 

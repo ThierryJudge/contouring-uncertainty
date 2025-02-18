@@ -33,5 +33,14 @@ python runner.py -h
 
 ## MICCAI 2023
 
+To train contouring models use 
+
+```bash
+ python runner.py  data=camus-cont task=dsnt-al
+ python runner.py  data=camus-cont task=dsnt-al2
+ python runner.py  data=camus-cont task=dsnt-skew
+ ```
 
 ## TMI 2025
+
+To run models with uncertainty propagation run scripts in /tmi_scripts. 
