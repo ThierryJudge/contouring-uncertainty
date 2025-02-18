@@ -1,0 +1,2 @@
+clinical_metrics:
+    _target_: contour_uncertainty.results.clinical.clinical_metrics.ClinicalMetrics

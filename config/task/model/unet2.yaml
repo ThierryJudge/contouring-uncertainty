@@ -1,0 +1,10 @@
+
+_target_: contour_uncertainty.models.nnUnet.unet2.UNet
+
+kernels: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+#kernels: [[3, 3], [3, 3], [3, 3], [3, 3], [3, 3], [3, 3]]
+#strides: [[1, 1], [2, 2], [2, 2], [2, 2], [2, 2], [2, 2]]
+patch_size: [256, 256]
+drop_block: False
+deep_supervision: False

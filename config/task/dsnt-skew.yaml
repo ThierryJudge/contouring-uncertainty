@@ -1,0 +1,20 @@
+_target_: contour_uncertainty.task.regression.dsnt.dsnt_skew.DSNTSkew
+
+defaults:
+  - task_default
+
+covar: True
+mse_weight: 1
+log_penalty_weight: 1
+iterations: 1
+
+skew_indices: null
+#skew_indices: [0, 10, 20]
+
+psm_path: ${choices.data}_psm_11_no_std.npy
+seq_psm_path: ${choices.data}_sequence_psm_11_no_std.npy
+
+sequence_sampler: False
+
+task_name: ${choices.task}-all${if:${task.sequence_sampler}, True, "sequence", ""}-${choices.task/model}-${task.model.drop_block}
+load_name: ${choices.task}-all-${choices.task/model}-${task.model.drop_block}

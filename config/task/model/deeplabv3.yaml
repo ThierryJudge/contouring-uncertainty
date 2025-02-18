@@ -1,0 +1,7 @@
+_target_: contour_uncertainty.models.deeplabv3.deeplabv3.DeepLabv3
+
+backbone: resnet50
+convert_grayscale_to_rgb: True
+pretrained: False
+pretrained_backbone: False
+dropout: 0

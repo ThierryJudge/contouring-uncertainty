@@ -1,0 +1,5 @@
+_target_: contour_uncertainty.task.segmentation.mcdropout.McDropoutUncertainty
+
+
+defaults:
+  - task_default

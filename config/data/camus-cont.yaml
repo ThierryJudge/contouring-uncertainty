@@ -1,0 +1,15 @@
+defaults:
+  - camus
+  - override results_processors@_global_.results_processors:
+    - point_metrics
+    - calibration
+    - clinical_metrics
+    - instant_metrics
+    - mutual_info
+
+
+
+
+
+_target_: contour_uncertainty.data.camus.datamodule.CamusContourDataModule
+points_per_side: 11

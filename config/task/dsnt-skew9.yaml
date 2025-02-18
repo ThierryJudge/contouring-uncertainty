@@ -1,0 +1,4 @@
+defaults:
+  - dsnt-skew
+
+skew_indices: [0, 2, 5, 7, 10, 13, 15, 18, 20]

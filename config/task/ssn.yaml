@@ -1,0 +1,6 @@
+_target_: contour_uncertainty.task.segmentation.ssn.StochasticSegmentationNetwork
+
+
+defaults:
+  - task_default
+  - override optim: rmsprop

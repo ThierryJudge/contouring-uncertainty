@@ -1,0 +1,15 @@
+defaults:
+  - default
+  - override results_processors@_global_.results_processors:
+     - miccai_plot
+     - calibration
+     - mutual_info
+     - instant_metrics
+     - rates
+     - skewness
+
+_target_: contour_uncertainty.data.lung.datamodule.JSRTDataModule
+dataset_path: ${oc.env:LUNG_DATA_PATH}
+labels: null # add for naming exps
+da: True
+

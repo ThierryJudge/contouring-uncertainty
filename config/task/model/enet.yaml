@@ -1,0 +1,7 @@
+
+_target_: contour_uncertainty.models.enet.Enet
+
+init_channels: 16
+dropout: 0.1
+encoder_relu: True
+decoder_relu: True

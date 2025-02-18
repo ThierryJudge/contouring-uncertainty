@@ -1,0 +1,2 @@
+point_metrics:
+    _target_: contour_uncertainty.results.point_metrics.PointMetrics

@@ -1,0 +1,53 @@
+# Default configuration.
+
+
+defaults:
+  - vital_default # This references default config from vital.config.vital_default.yaml
+  - override logger: comet/online
+  - override callbacks:
+    - model_checkpoint
+    - early_stopping
+    - lr_monitor
+  - _self_
+
+
+logger:
+  project_name: clinical-uncertainty2
+  workspace: thierryjudge
+
+seed: 10
+
+# id: ${choices.data}_${choices.task}_${choices.task/model}-${frac:${task.model.dropout}}
+id: ${choices.data}${labels:${data.labels}}_${task.task_name}
+
+name: ${id}_${seed}
+model_path: ${oc.env:SAVE_PATH}/${seed}
+best_model_save_path: ${model_path}/${name}.ckpt
+
+strict: True
+
+load_path:  ${model_path}/${choices.data}${labels:${data.labels}}_${task.load_name}_${seed}.ckpt
+weights: ${if:${train}, False, ${load_path}, null}
+
+max_figures: 1000
+
+data:
+  num_workers: 5
+
+trainer:
+  max_epochs: 1000
+  devices: 1
+  fast_dev_run: 10
+
+callbacks:
+    early_stopping:
+        patience: 100
+#        monitor: "val/dice"
+#        mode: 'max'
+#    model_checkpoint:
+#        monitor: "val/dice"
+#        mode: 'max'
+
+
+# Copy of original working directory before hydra changes it. Useful for paths.
+work_dir: ${hydra:runtime.cwd}

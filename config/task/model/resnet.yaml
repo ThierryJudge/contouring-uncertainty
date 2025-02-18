@@ -1,0 +1,3 @@
+_target_: contour_uncertainty.models.resnet.Resnet
+
+dropout: 0

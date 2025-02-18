@@ -1,0 +1,9 @@
+defaults:
+  - predict: null
+  - postprocessing: null
+  - results_processors@_global_.results_processors: null
+
+_target_: ???
+dataset_path: ???
+batch_size: 32
+num_workers: ${sys.num_workers:}

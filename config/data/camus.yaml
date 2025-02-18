@@ -1,0 +1,20 @@
+defaults:
+  - default
+  - override predict: null
+  - override postprocessing: null
+  - override results_processors@_global_.results_processors:
+      - clinical_metrics
+      - instant_metrics
+      - calibration
+      - mutual_info
+
+
+
+#labels: [bg, lv, myo]
+labels: [lv]
+dataset_path: ${oc.env:CAMUS_DATA_PATH}
+fold: 5
+use_sequence: False
+da: True
+
+_target_: contour_uncertainty.data.camus.datamodule.CamusDataModule

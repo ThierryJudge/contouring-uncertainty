@@ -1,0 +1,20 @@
+defaults:
+  - default
+  - override model: unet2
+
+# task_name: ${choices.task}_${choices.task/model}
+task_name: ${choices.task}-${choices.task/model}-${task.model.drop_block}
+load_name: ${task.task_name}
+
+
+log_figures: False
+
+train_ensemble: False
+t_a: 25
+t_e: 1
+
+
+name: ${id}_${seed}
+model_path: ${oc.env:SAVE_PATH}/${seed}
+best_model_save_path: ${model_path}/${name}.ckpt
+

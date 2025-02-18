@@ -1,0 +1,17 @@
+_target_: contour_uncertainty.task.regression.dsnt.dsnt_al.DSNTAleatoric
+
+defaults:
+  - task_default
+  - override optim: adam
+
+covar: True
+mse_weight: 1
+log_penalty_weight: 1
+
+sequence_sampler: False
+
+psm_path: camus-cont_psm_11_no_std.npy
+seq_psm_path: camus-cont_sequence_psm_11_no_std.npy
+
+task_name: ${choices.task}${if:${task.sequence_sampler}, True, "sequence", ""}-${choices.task/model}-${task.model.drop_block}
+load_name: ${choices.task}-${choices.task/model}-${task.model.drop_block}

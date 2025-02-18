@@ -1,0 +1,4 @@
+defaults:
+  - lung
+
+_target_: contour_uncertainty.data.lung.datamodule.JSRTContourDataModule

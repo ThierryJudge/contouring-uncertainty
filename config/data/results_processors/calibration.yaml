@@ -1,0 +1,2 @@
+calibration:
+    _target_: contour_uncertainty.results.calibration.Calibration

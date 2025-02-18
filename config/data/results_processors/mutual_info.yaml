@@ -1,0 +1,3 @@
+mutual_info:
+    _target_: contour_uncertainty.results.mutual_information.UncertaintyErrorMutualInfo
+    max_figures: ${max_figures}

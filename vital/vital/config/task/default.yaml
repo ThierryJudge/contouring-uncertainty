@@ -1,0 +1,19 @@
+defaults:
+  - model: ???
+  - optim: adam
+  - results_processors@_global_.results_processors: null
+
+_target_: ???
+enable_model_summary: ${oc.select:trainer.enable_model_summary,True}
+
+train_log_kwargs:
+  prog_bar: False
+  logger: True
+  on_step: True
+  on_epoch: null
+
+val_log_kwargs:
+  prog_bar: False
+  logger: True
+  on_step: null
+  on_epoch: True
